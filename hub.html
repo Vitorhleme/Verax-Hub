@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Verax Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="hub-style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="logo">Verax</a>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#"><i class='bx bxs-dashboard'></i><span>Hub</span></a></li>
+                <li><a href="#"><i class='bx bxs-truck'></i><span>TruCar</span></a></li>
+                <li><a href="#"><i class='bx bxs-contact'></i><span>CRM <span class="soon-badge">Breve</span></span></a></li>
+                <li><a href="#"><i class='bx bxs-group'></i><span>RH <span class="soon-badge">Breve</span></span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="profile-link">
+                    <img src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Avatar do Usuário" class="profile-avatar">
+                    <span>Vitor Leme</span>
+                </a>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <header class="main-header-app">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menu-toggle"><i class='bx bx-menu'></i></button>
+                    <h2>Dashboard Geral</h2>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class='bx bx-search'></i>
+                        <input type="text" placeholder="Buscar...">
+                    </div>
+                    <button class="icon-button"><i class='bx bxs-bell'></i><span class="notification-dot"></span></button>
+                    <a href="login.html" class="icon-button"><i class='bx bx-log-out'></i></a>
+                </div>
+            </header>
+
+            <main class="dashboard-area">
+                <div class="welcome-message">
+                    <h3>Olá, Vitor! 👋</h3>
+                    <p>Aqui está o resumo da sua operação hoje.</p>
+                </div>
+
+                <div class="widgets-grid">
+                    <div class="widget kpi-card">
+                        <div class="card-icon truck-icon"><i class='bx bxs-truck'></i></div>
+                        <h4>Veículos Ativos</h4>
+                        <p>18 / 20</p>
+                        <span class="card-trend up"><i class='bx bx-trending-up'></i> +1 desde ontem</span>
+                    </div>
+                    <div class="widget kpi-card">
+                        <div class="card-icon cost-icon"><i class='bx bx-dollar-circle'></i></div>
+                        <h4>Custo Total (Mês)</h4>
+                        <p>R$ 47.850,30</p>
+                        <span class="card-trend down"><i class='bx bx-trending-down'></i> -3.5% vs. mês passado</span>
+                    </div>
+                    <div class="widget kpi-card">
+                        <div class="card-icon maintenance-icon"><i class='bx bxs-wrench'></i></div>
+                        <h4>Manutenções</h4>
+                        <p>3 Pendentes</p>
+                        <span class="card-trend neutral">Verificar agora</span>
+                    </div>
+                     <div class="widget kpi-card coming-soon">
+                        <div class="card-icon crm-icon"><i class='bx bxs-contact'></i></div>
+                        <h4>Novos Leads (CRM)</h4>
+                        <p>Em Breve</p>
+                        <span class="card-trend neutral">Integração futura</span>
+                    </div>
+                     <div class="widget kpi-card coming-soon">
+                        <div class="card-icon rh-icon"><i class='bx bxs-group'></i></div>
+                        <h4>Documentos Vencendo (RH)</h4>
+                        <p>Em Breve</p>
+                        <span class="card-trend neutral">Integração futura</span>
+                    </div>
+                </div>
+
+                <div class="widget chart-card">
+                    <h4>Análise de Custos por Categoria (TruCar)</h4>
+                    <div class="chart-container">
+                        <canvas id="costsChart"></canvas>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="hub-script.js"></script>
+</body>
+</html>

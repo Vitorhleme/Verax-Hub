@@ -1,0 +1,118 @@
+/* ---- VARIÁVEIS DE CORES E CONFIGURAÇÕES GLOBAIS ---- */
+:root {
+    --color-background: #12121c;
+    --color-surface: #1e1e2f;
+    --color-primary: #8e44ad;
+    --color-secondary: #2980b9;
+    --color-accent: #e67e22;
+    --color-text: #ecf0f1;
+    --color-text-muted: #bdc3c7;
+    --color-border: #2d2d4a;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* ---- RESET E ESTILOS BASE ---- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ---- TELA DE LOGIN ---- */
+.login-body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(45deg, #12121c, #1e1e2f); padding: 1rem; }
+.login-container { width: 100%; max-width: 400px; }
+.login-box { background-color: var(--color-surface); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--color-border); }
+.login-header { text-align: center; margin-bottom: 2rem; }
+.login-header .logo { font-size: 2.5rem; background: linear-gradient(45deg, var(--color-primary), var(--color-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; font-weight: 700; }
+.login-header h2 { margin-top: 1rem; }
+.login-header p { color: var(--color-text-muted); }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input { width: 100%; padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--color-border); background-color: var(--color-background); color: var(--color-text); font-family: var(--font-family); font-size: 1rem; }
+.form-group input:focus { outline: none; border-color: var(--color-primary); }
+.form-options { text-align: right; margin-bottom: 1.5rem; }
+.forgot-password { color: var(--color-secondary); text-decoration: none; font-size: 0.9rem; }
+.btn { width: 100%; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; cursor: pointer; }
+.btn-primary { background: linear-gradient(45deg, var(--color-primary), var(--color-secondary)); color: white; }
+.btn-primary:hover { opacity: 0.9; }
+.login-footer { text-align: center; margin-top: 2rem; font-size: 0.9rem; }
+.login-footer a { color: var(--color-secondary); font-weight: 600; }
+
+/* ---- LAYOUT GERAL DA APLICAÇÃO ---- */
+.app-container { display: flex; position: relative; }
+.sidebar { width: 260px; background-color: var(--color-surface); height: 100vh; position: fixed; display: flex; flex-direction: column; border-right: 1px solid var(--color-border); transition: transform 0.3s ease-in-out; z-index: 1000; }
+.sidebar-header { padding: 1.5rem; text-align: center; }
+.sidebar-header .logo { font-size: 2rem; }
+.sidebar-menu { flex-grow: 1; list-style: none; padding-top: 2rem; }
+.sidebar-menu li a { display: flex; align-items: center; gap: 1rem; color: var(--color-text-muted); text-decoration: none; padding: 1rem 1.5rem; border-radius: 8px; margin: 0.5rem 1rem; transition: background-color 0.3s, color 0.3s; }
+.sidebar-menu li a:hover, .sidebar-menu li.active a { background-color: var(--color-primary); color: white; }
+.sidebar-menu i { font-size: 1.5rem; }
+.soon-badge { background-color: var(--color-accent); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; color: white; margin-left: auto; }
+.sidebar-footer { padding: 1.5rem; border-top: 1px solid var(--color-border); }
+.profile-link { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--color-text); }
+.profile-avatar { width: 40px; height: 40px; border-radius: 50%; }
+
+.main-content { margin-left: 260px; width: calc(100% - 260px); padding: 1.5rem; transition: margin-left 0.3s; }
+.main-header-app { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.header-left { display: flex; align-items: center; gap: 1rem; }
+.menu-toggle { display: none; background: none; border: none; color: var(--color-text); font-size: 1.8rem; cursor: pointer; }
+.header-right { display: flex; align-items: center; gap: 0.5rem; }
+.search-bar { background-color: var(--color-surface); display: flex; align-items: center; padding: 0.5rem 1rem; border-radius: 8px; }
+.search-bar input { background: none; border: none; color: var(--color-text); outline: none; }
+.icon-button { background-color: var(--color-surface); color: var(--color-text-muted); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.5rem; cursor: pointer; position: relative; display: grid; place-items: center; }
+.notification-dot { position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; background-color: var(--color-accent); border-radius: 50%; }
+
+/* ---- DASHBOARD E WIDGETS ---- */
+.welcome-message { margin-bottom: 2rem; }
+.welcome-message p { color: var(--color-text-muted); }
+.widgets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+.widget { background-color: var(--color-surface); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--color-border); }
+.kpi-card { text-align: center; }
+.kpi-card .card-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; color: white; margin: 0 auto 1rem auto; }
+.truck-icon { background-color: var(--color-secondary); }
+.cost-icon { background-color: #27ae60; }
+.maintenance-icon { background-color: var(--color-accent); }
+.crm-icon, .rh-icon { background-color: #7f8c8d; }
+.kpi-card h4 { color: var(--color-text-muted); font-weight: 500; font-size: 0.9rem; }
+.kpi-card p { font-size: 1.8rem; font-weight: 700; margin: 0.5rem 0; }
+.card-trend { font-size: 0.9rem; }
+.card-trend.up { color: #27ae60; }
+.card-trend.down { color: #e74c3c; }
+.card-trend.neutral { color: var(--color-text-muted); }
+.coming-soon { opacity: 0.6; }
+.chart-card h4 { margin-bottom: 1.5rem; }
+
+/* ################################### */
+/* ########## RESPONSIVIDADE ######### */
+/* ################################### */
+
+@media (max-width: 992px) {
+    .sidebar { transform: translateX(-100%); width: 260px; }
+    .sidebar.expanded { transform: translateX(0); }
+    .main-content { margin-left: 0; width: 100%; }
+    .menu-toggle { display: block; }
+    .app-container.sidebar-open::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content { padding: 1rem; }
+    .search-bar { display: none; }
+    .header-left h2 { font-size: 1.2rem; }
+    .welcome-message h3 { font-size: 1.5rem; }
+    .widgets-grid { grid-template-columns: 1fr 1fr; }
+    .chart-card { padding: 1rem; }
+    .login-box { padding: 2rem 1.5rem; }
+}
